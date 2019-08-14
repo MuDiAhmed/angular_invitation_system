@@ -4,6 +4,7 @@ import {SentInvitationComponent} from './sent-invitation.component';
 import {SentInvitationRoutingModule} from "./sent-invitation-routing.module";
 import {MatButtonModule, MatIconModule, MatListModule} from "@angular/material";
 import {CommonModule} from "@angular/common";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import {CommonModule} from "@angular/common";
     SentInvitationRoutingModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   declarations: [SentInvitationComponent],
   exports: [SentInvitationComponent]

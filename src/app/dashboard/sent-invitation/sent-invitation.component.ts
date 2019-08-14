@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {InvitationService} from "../invitation.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
     selector: 'sent-invitation-component',
@@ -10,7 +11,8 @@ export class SentInvitationComponent {
 
   invitations = null;
 
-  constructor(private invitationService: InvitationService){
+  constructor(private invitationService: InvitationService, private router:Router,
+              private route: ActivatedRoute){
     this.invitationService.getSentInvitations()
       .subscribe((response) => {
           this.invitations = response;
@@ -25,5 +27,9 @@ export class SentInvitationComponent {
         this.invitations.splice(index,1);
         console.log(this.invitations);
       })
+  }
+
+  addInvitation(){
+    this.router.navigate(['/dashboard/add'], { relativeTo: this.route });
   }
 }

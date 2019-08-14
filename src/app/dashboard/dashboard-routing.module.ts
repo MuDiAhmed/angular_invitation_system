@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('./received-invitation/received-invitation.module').then(mod => mod.ReceivedInvitationModule),
       },
       {
+        path: 'add',
+        loadChildren: () => import('./add-invitation/add-invitation.module').then(mod => mod.AddInvitationModule),
+      },
+      {
         path: '',
         redirectTo: 'sent'
       }
