@@ -15,6 +15,6 @@ export class LocalStorageService {
   }
 
   public get(key: string){
-    this.storage.get(key);
+    return this.storage.get(key);
   }
 }

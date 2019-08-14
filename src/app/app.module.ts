@@ -10,22 +10,23 @@ import {AppConfig} from "./app.config"
 import {UserService} from "./user.service";
 import {StorageServiceModule} from "ngx-webstorage-service";
 import {LocalStorageService} from "./local-storage.service";
+import {InvitationService} from "./dashboard/invitation.service";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     TooltipModule.forRoot(),
-    StorageServiceModule
+    StorageServiceModule,
   ],
   providers: [
     {provide: AppConfig, useClass:  AppConfig},
     UserService,
+    InvitationService,
     LocalStorageService],
   bootstrap: [AppComponent]
 })
