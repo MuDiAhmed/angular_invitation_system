@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import {AppConfig} from "./app.config"
+import {UserService} from "./user.service";
+import {StorageServiceModule} from "ngx-webstorage-service";
+import {LocalStorageService} from "./local-storage.service";
 
 @NgModule({
   declarations: [
@@ -16,9 +20,13 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    StorageServiceModule
   ],
-  providers: [],
+  providers: [
+    {provide: AppConfig, useClass:  AppConfig},
+    UserService,
+    LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
