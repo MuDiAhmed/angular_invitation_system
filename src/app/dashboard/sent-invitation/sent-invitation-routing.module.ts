@@ -5,12 +5,8 @@ import {SentInvitationComponent} from "./sent-invitation.component";
 
 const routes: Routes = [
   {
-    path: 'sent',
-    component: SentInvitationComponent
-  },
-  {
     path: '',
-    redirectTo: 'sent'
+    component: SentInvitationComponent
   }
 ];
 

@@ -6,8 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    loadChildren: () => import('./sent-invitation/sent-invitation.module').then(mod => mod.SentInvitationModule),
-  }
+    children:[
+      {
+        path: 'sent',
+        loadChildren: () => import('./sent-invitation/sent-invitation.module').then(mod => mod.SentInvitationModule),
+      },
+      {
+        path: 'received',
+        loadChildren: () => import('./received-invitation/received-invitation.module').then(mod => mod.ReceivedInvitationModule),
+      },
+      {
+        path: '',
+        redirectTo: 'sent'
+      }
+    ]
+  },
+
 ];
 
 @NgModule({
